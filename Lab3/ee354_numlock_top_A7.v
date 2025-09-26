@@ -68,6 +68,7 @@ module ee354_numlock_top (
 	wire [3:0]		SSD0, SSD1, SSD2, SSD3;	
 	reg [6:0]  		SSD_CATHODES;
 	wire [6:0] 		SSD_CATHODES_blinking;	
+	wire [11:0]		onehot_lookup = (1 << state_num);
 
 	
 //------------	
@@ -120,14 +121,14 @@ module ee354_numlock_top (
 	// let's form some wire aliases with easier naming (U and Z, for UNO and ZERO) 
 
 // TODO: add the lines to assign your I/O inputs to U and Z
-	assign {U,Z} = {BtnL, BtnR};
+	assign U= BtnL;
+	assign Z = BtnR;
 	
 	
 	// switches used to send the value of a specific state to LD6
 
 	assign selected_state = {Sw3, Sw2, Sw1, Sw0};
 	
-
 //------------
 // DESIGN
 
@@ -165,20 +166,20 @@ module ee354_numlock_top (
 	always @ ( q_I, q_G1get, q_G1, q_G10get, q_G10, q_G101get, q_G101, q_G1011get, q_G1011, q_Opening, q_Bad )
 	begin : ONE_HOT_TO_HEX
 		(* full_case, parallel_case *) // to avoid prioritization (Verilog 2001 standard)
-		case ( {q_I, q_G1get, q_G1, q_G10get, q_G10, q_G101get, q_G101, q_G1011get, q_G1011, q_Opening, q_Bad} )		
+		case ( {q_Bad, q_Opening, q_G1011, q_G1011get, q_G101, q_G101get, q_G10, q_G10get, q_G1, q_G1get, q_I} )
 
 // TODO: complete the 1-hot encoder	
-			11'b10000000000: state_num = QI_NUM;
-			11'b01000000000: state_num = QG1GET_NUM;
-			11'b00100000000: state_num = QG1_NUM;
-			11'b00010000000: state_num = QG10GET_NUM;
-			11'b00001000000: state_num = QG10_NUM;
+			11'b00000000001: state_num = QI_NUM;        
+			11'b00000000010: state_num = QG1GET_NUM;
+			11'b00000000100: state_num = QG1_NUM;
+			11'b00000001000: state_num = QG10GET_NUM;
+			11'b00000010000: state_num = QG10_NUM;
 			11'b00000100000: state_num = QG101GET_NUM;
-			11'b00000010000: state_num = QG101_NUM;
-			11'b00000001000: state_num = QG1011GET_NUM;
-			11'b00000000100: state_num = QG1011_NUM;
-			11'b00000000010: state_num = QOPENING_NUM;
-			11'b00000000001: state_num = QBAD_NUM;
+			11'b00001000000: state_num = QG101_NUM;
+			11'b00010000000: state_num = QG1011GET_NUM;
+			11'b00100000000: state_num = QG1011_NUM;
+			11'b01000000000: state_num = QOPENING_NUM;
+			11'b10000000000: state_num = QBAD_NUM;
 		endcase
 	end
 	
@@ -239,11 +240,13 @@ module ee354_numlock_top (
 // SSD (Seven Segment Display)
 
 // TODO: finish the assignment for SSD3, SSD2, SSD1	Consider using the concatenation operator
-	assign SSD3 = state_num;
-	assign SSD2 = state_num;
-	assign SSD1 = state_num;
-	assign SSD0 = state_num;
+	//------------
+// SSD (Seven Segment Display)
 	
+	assign SSD3 = onehot_lookup[11:8];  // Hundreds digit
+	assign SSD2 = onehot_lookup[7:4];   // Tens digit  
+	assign SSD1 = onehot_lookup[3:0];   // Ones digit
+	assign SSD0 = state_num;            // Original state number
 	
 	// need a scan clk for the seven segment display 
 	
@@ -301,16 +304,16 @@ module ee354_numlock_top (
 	begin : HEX_TO_SSD
 		case (SSD)
 // TODO: write cases for 0-9. A-F are already given to you. 
-			4'b0000: SSD_CATHODES = 7'b1000000 ; // 0
-			4'b0001: SSD_CATHODES = 7'b1111001 ; // 1
-			4'b0010: SSD_CATHODES = 7'b0100100 ; // 2
-			4'b0011: SSD_CATHODES = 7'b0110000 ; // 3
-			4'b0100: SSD_CATHODES = 7'b0011001 ; // 4
-			4'b0101: SSD_CATHODES = 7'b0010010 ; // 5
-			4'b0110: SSD_CATHODES = 7'b0000010 ; // 6
-			4'b0111: SSD_CATHODES = 7'b1111000 ; // 7
-			4'b1000: SSD_CATHODES = 7'b0000000 ; // 8
-			4'b1001: SSD_CATHODES = 7'b0010000 ; // 9
+			4'b0000: SSD_CATHODES = 7'b0000001; // 0
+			4'b0001: SSD_CATHODES = 7'b1001111; // 1
+			4'b0010: SSD_CATHODES = 7'b0010010; // 2
+			4'b0011: SSD_CATHODES = 7'b0000110; // 3
+			4'b0100: SSD_CATHODES = 7'b1001100; // 4
+			4'b0101: SSD_CATHODES = 7'b0100100; // 5
+			4'b0110: SSD_CATHODES = 7'b0100000; // 6
+			4'b0111: SSD_CATHODES = 7'b0001111; // 7
+			4'b1000: SSD_CATHODES = 7'b0000000; // 8
+			4'b1001: SSD_CATHODES = 7'b0000100; // 9
 			4'b1010: SSD_CATHODES = 7'b0001000 ; // A
 			4'b1011: SSD_CATHODES = 7'b1100000 ; // B
 			4'b1100: SSD_CATHODES = 7'b0110001 ; // C
@@ -322,6 +325,5 @@ module ee354_numlock_top (
 	end	
 	
 endmodule
-
 
 
