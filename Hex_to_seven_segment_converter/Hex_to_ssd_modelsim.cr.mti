@@ -1,0 +1,15 @@
+C:/Modelsim_projects/Labs/Lab2/Hex_to_seven_segment_converter/seven_segment_display_revised_tb.v {1 {vlog -work work -vopt -stats=none {C:\Modelsim_projects\Labs\Lab2\Hex_to_seven_segment_converter\seven_segment_display_revised_tb.v}
+Model Technology ModelSim SE-64 vlog 10.6e Compiler 2018.06 Jun 23 2018
+-- Compiling module seven_segment_display_tb
+
+Top level modules:
+	seven_segment_display_tb
+
+} {} {}} C:/Modelsim_projects/Labs/Lab2/Hex_to_seven_segment_converter/seven_segment_display.v {1 {vlog -work work -vopt -stats=none C:/Modelsim_projects/Labs/Lab2/Hex_to_seven_segment_converter/seven_segment_display.v
+Model Technology ModelSim SE-64 vlog 10.6e Compiler 2018.06 Jun 23 2018
+-- Compiling module seven_segment_display
+
+Top level modules:
+	seven_segment_display
+
+} {} {}}

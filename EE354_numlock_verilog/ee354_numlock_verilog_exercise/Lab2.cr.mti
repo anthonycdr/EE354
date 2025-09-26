@@ -1,0 +1,8 @@
+C:/Modelsim_projects/Labs/Lab2/EE354_numlock_verilog/ee354_numlock_verilog_exercise/ee354_numlock_sm.v {1 {vlog -work work -vopt -stats=none C:/Modelsim_projects/Labs/Lab2/EE354_numlock_verilog/ee354_numlock_verilog_exercise/ee354_numlock_sm.v
+Model Technology ModelSim SE-64 vlog 10.6e Compiler 2018.06 Jun 23 2018
+-- Compiling module ee354_numlock_sm
+
+Top level modules:
+	ee354_numlock_sm
+
+} {} {}}

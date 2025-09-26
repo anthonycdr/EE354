@@ -1,0 +1,92 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Modelsim_projects
+T_opt
+!s110 1758779878
+VPI6`an>P1lET7=ZR6lh>80
+Z1 04 19 4 work ee354_numlock_sm_tb fast 0
+=1-849e565a03b1-68d4d9e6-1bc-8238
+o-quiet -auto_acc_if_foreign -work work
+Z2 tCvgOpt 0
+n@_opt
+Z3 OL;O;10.6e;65
+R0
+T_opt1
+!s110 1758781063
+V9Qk?9N5OjzM:4@0VhkmZH1
+R1
+=1-849e565a03b1-68d4de87-21e-27e4
+o-quiet -auto_acc_if_foreign -work work +acc
+R2
+n@_opt1
+R3
+vee354_numlock_sm
+Z4 !s110 1758781062
+!i10b 1
+!s100 _GUS]h11l]ZzMcDPUk[P02
+I0]REEffg1z<gZ;PZ_j]W93
+Z5 VDg1SIo80bB@j0V0VzS_@n1
+Z6 dC:/Modelsim_projects/Labs/Lab2/EE354_numlock_verilog/ee354_numlock_verilog_exercise
+w1758778723
+8ee354_numlock_sm.v
+Fee354_numlock_sm.v
+L0 3
+Z7 OL;L;10.6e;65
+r1
+!s85 0
+31
+Z8 !s108 1758781062.000000
+!s107 ee354_numlock_sm.v|
+!s90 -reportprogress|300|+acc|ee354_numlock_sm.v|
+!i113 0
+Z9 o+acc -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R2
+vee354_numlock_sm_tb
+R4
+!i10b 1
+!s100 ^[W`X:>C]6OlaP4VYW7Gk0
+I`oAWCeQ=CU<iSffj<5g;l2
+R5
+R6
+w1758243304
+8ee354_numlock_sm_tb.v
+Fee354_numlock_sm_tb.v
+L0 9
+R7
+r1
+!s85 0
+31
+R8
+!s107 ee354_numlock_sm_tb.v|
+!s90 -reportprogress|300|+acc|ee354_numlock_sm_tb.v|
+!i113 0
+R9
+R2
+vee354_numlock_top
+R4
+!i10b 1
+!s100 ;z7CH0BHHeJ<=VEQE0P<_1
+I7<]>S:SLFM78YM[FZ8g_T2
+R5
+R6
+w1758778721
+8ee354_numlock_top_A7.v
+Fee354_numlock_top_A7.v
+L0 15
+R7
+r1
+!s85 0
+31
+R8
+!s107 ee354_numlock_top_A7.v|
+!s90 -reportprogress|300|+acc|ee354_numlock_top_A7.v|
+!i113 0
+R9
+R2

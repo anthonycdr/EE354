@@ -1,0 +1,56 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/modeltech64_10.6e/examples
+vseven_segment_display
+Z0 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+r1
+!s85 0
+31
+!i10b 1
+!s100 M_@_X4W_]iF_caHzHOi5I1
+ILEdjR>H?acZh=0]F<W9iG1
+!s105 seven_segment_display_v_unit
+S1
+Z2 dC:/Modelsim_projects/Labs/Lab2/Hex_to_seven_segment_converter
+w1758914934
+8seven_segment_display.v
+Fseven_segment_display.v
+L0 30
+Z3 OL;L;10.6e;65
+!s108 1758925816.000000
+!s107 seven_segment_display.v|
+!s90 -reportprogress|300|-sv|+acc|seven_segment_display.v|
+!i113 0
+Z4 o-sv +acc -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z5 tCvgOpt 0
+vseven_segment_display_tb
+R0
+R1
+r1
+!s85 0
+31
+!i10b 1
+!s100 <zFXQNCP<P4IXzXQ2YIA20
+IEn8nG@:H?_EMFMkUYBYJQ3
+!s105 seven_segment_display_revised_tb_v_unit
+S1
+R2
+w1758925754
+8seven_segment_display_revised_tb.v
+Fseven_segment_display_revised_tb.v
+L0 35
+R3
+!s108 1758925817.000000
+!s107 seven_segment_display_revised_tb.v|
+!s90 -reportprogress|300|-sv|+acc|seven_segment_display_revised_tb.v|
+!i113 0
+R4
+R5
